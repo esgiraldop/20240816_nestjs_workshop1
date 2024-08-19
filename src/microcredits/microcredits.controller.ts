@@ -20,4 +20,9 @@ export class MicrocreditsController {
     async createMicrocredit(@Body() microcreditData:createMicrocreditDto):Promise<Microcredit>{
         return await this.microcreditsService.createMicrocredit(microcreditData)
     }
+
+    @Post('Apply')
+    async applyForMicrocredit(@Body() userId:number, @Body() amount:number):Promise<Microcredit>{
+        return await this.microcreditsService.applyForMicrocredit(userId, amount)
+    }
 }
